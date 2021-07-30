@@ -26,13 +26,16 @@ namespace SecurityInAspNet.Controllers
         {
             return View(new List<CourseGrade>());
         }
+
         [HttpGet]
+        [Authorize(Policy = "FacultyOnly")]
         public IActionResult AddGrade()
         {
             return View();
         }
 
         [HttpPost]
+        [Authorize(Policy = "FacultyOnly")]
         public IActionResult AddGrade(CourseGrade model)
         {
             if (!ModelState.IsValid)
@@ -45,7 +48,9 @@ namespace SecurityInAspNet.Controllers
 
             return RedirectToAction(nameof(StudentController.Index), "Student");
         }
+
         [HttpGet]
+        [AllowAnonymous]
         public IActionResult Classifications()
         {
             var classifications = new List<string>()

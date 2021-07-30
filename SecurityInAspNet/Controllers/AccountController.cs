@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -44,6 +45,10 @@ namespace SecurityInAspNet.Controllers
 
                 if (result.Succeeded)
                 {
+                    if (!string.IsNullOrEmpty(model.FacultyNumber))
+                    {
+                        await _userManager.AddClaimAsync(user, new Claim("FacultyNumber", model.FacultyNumber));
+                    }
                     return RedirectToAction("Login", "Account");
                 }
                 else

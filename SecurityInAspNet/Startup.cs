@@ -40,6 +40,13 @@ namespace SecurityInAspNet
 
             services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<IdentityDbContext>()
                 .AddDefaultTokenProviders();
+
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("FacultyOnly",
+                    policy=>policy.RequireClaim("FacultyNumber")
+                    );
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
