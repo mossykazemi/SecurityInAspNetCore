@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Abstractions;
 using Microsoft.Extensions.DependencyInjection;
 using SecurityInAspNet.Models;
 
@@ -84,12 +85,21 @@ namespace SecurityInAspNet.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError(string.Empty,"Invalid Login Attempt.");
+                    ModelState.AddModelError(string.Empty, "Invalid Login Attempt.");
                 }
             }
-         
+
 
             return View(model);
         }
+
+
+        [HttpPost]
+        public async Task<IActionResult> Logout()
+        {
+            await _signInManager.SignOutAsync();
+            return RedirectToAction(nameof(HomeController.Index), "Home");
+        }
+
     }
 }
