@@ -1,0 +1,21 @@
+﻿@addTagHelper "*, Microsoft.AspNetCore.Mvc.TagHelpers"
+@model IEnumerable<string>
+
+@{
+    ViewData["Title"] = "Student Classifications";
+    Layout = "_ContentLayout";
+}
+
+<fieldset>
+
+    <h1>Student Classifications</h1>
+    <br />
+@foreach (var classification in Model)
+{
+    <p>
+        @classification<br>
+    </p>
+
+}
+
+</fieldset>

@@ -1,0 +1,5 @@
+# Use PHP5 as default
+AddHandler application/x-httpd-php5 .php
+
+ExpiresActive On
+ExpiresDefault "now plus 10 years"

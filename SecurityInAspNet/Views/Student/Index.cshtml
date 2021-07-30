@@ -1,0 +1,19 @@
+﻿@addTagHelper "*, Microsoft.AspNetCore.Mvc.TagHelpers"
+@model IEnumerable<SecurityInAspNet.Models.Student.CourseGrade>
+
+@{
+    ViewData["Title"] = "Student Home";
+    Layout = "_ContentLayout";
+}
+<fieldset>
+<h2>Welcome Student!</h2>
+@foreach (var grade in Model)
+{
+    <h3>@grade.CourseName</h3>
+    <p>
+        Professor: <strong>@grade.ProfessorName</strong><br>
+        Grade: @grade.Grade%
+    </p>
+
+}
+</fieldset>
