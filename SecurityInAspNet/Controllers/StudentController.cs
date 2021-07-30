@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SecurityInAspNet.Models.Student;
 using SecurityInAspNet.DataServices;
@@ -10,6 +11,7 @@ using SecurityInAspNet.DataServices;
 
 namespace SecurityInAspNet.Controllers
 {
+    [Authorize]
     public class StudentController : Controller
     {
         private readonly StudentDataContext _db;
