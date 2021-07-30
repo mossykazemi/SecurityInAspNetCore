@@ -6,7 +6,7 @@
     Layout = "_ContentLayout";
 }
 <fieldset>
-    <h2>Welcome Student!</h2>
+    <h2>Welcome @User.Identity.Name!</h2>
     <a asp-action="AddGrade">Add Grade</a>
     @foreach (var grade in Model)
     {

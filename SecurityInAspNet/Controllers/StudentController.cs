@@ -24,7 +24,10 @@ namespace SecurityInAspNet.Controllers
         // GET: /<controller>/
         public IActionResult Index()
         {
-            return View(new List<CourseGrade>());
+            var userName = User.Identity.Name;
+            var grades = _db.Grades.Where(g => g.StudentUsername == userName);
+
+            return View(grades);
         }
 
         [HttpGet]
