@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.DependencyInjection;
 using SecurityInAspNet.Models;
 
 namespace SecurityInAspNet.Controllers
@@ -12,10 +13,12 @@ namespace SecurityInAspNet.Controllers
     {
 
         private readonly UserManager<IdentityUser> _userManager;
+        private readonly SignInManager<IdentityUser> _signInManager;
 
-        public AccountController(UserManager<IdentityUser> userManager)
+        public AccountController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager)
         {
             _userManager = userManager;
+            _signInManager = signInManager;
         }
 
         [HttpGet]
@@ -30,13 +33,13 @@ namespace SecurityInAspNet.Controllers
 
             if (ModelState.IsValid)
             {
-                IdentityUser user=new IdentityUser()
+                IdentityUser user = new IdentityUser()
                 {
                     Email = model.Email,
                     UserName = model.Email
                 };
 
-                var result = await _userManager.CreateAsync(user,model.Password);
+                var result = await _userManager.CreateAsync(user, model.Password);
 
                 if (result.Succeeded)
                 {
@@ -46,7 +49,7 @@ namespace SecurityInAspNet.Controllers
                 {
                     foreach (var err in result.Errors)
                     {
-                        ModelState.AddModelError(string.Empty,err.Description);
+                        ModelState.AddModelError(string.Empty, err.Description);
                     }
                 }
             }
@@ -61,9 +64,32 @@ namespace SecurityInAspNet.Controllers
         }
 
         [HttpPost]
-        public IActionResult Login(LoginViewModel model)
+        public async Task<IActionResult> Login(LoginViewModel model, string returnUrl = null)
         {
-            return View();
+            ViewData["ReturnUrl"] = returnUrl;
+            if (ModelState.IsValid)
+            {
+                var result =
+                    await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, false);
+                if (result.Succeeded)
+                {
+                    if (Url.IsLocalUrl(returnUrl))
+                    {
+                        return Redirect(returnUrl);
+                    }
+                    else
+                    {
+                        return RedirectToAction(nameof(StudentController.Index), "Student");
+                    }
+                }
+                else
+                {
+                    ModelState.AddModelError(string.Empty,"Invalid Login Attempt.");
+                }
+            }
+         
+
+            return View(model);
         }
     }
 }
