@@ -1,0 +1,157 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>File not found</title>
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<!--[if lt IE 9]>
+<script src="../_scripts/respond.min.js"></script>
+<![endif]-->
+<link href="_css/main.css" rel="stylesheet" media="screen, projection">
+</head>
+<body>
+<header class="errorHeader pageHeader">
+<h1>Roux Academy of Art and Design<a href="/index.htm" title="home"></a></h1>
+<nav id="pageNav" class="cf">
+  <ul>
+    <li><a href="programs/programs.htm" title="programs">Programs</a></li>
+    <li><a href="admissions/admissions.htm" title="admissions">Admissions</a></li>
+    <li><a href="student_portal.htm" title="student portal">Student Portal</a></li>
+    <li><a href="campus_portal.htm" title="campus portal">Campus</a></li>
+    <li><a href="alumni.htm" title="alumni">Alumni</a></li>
+    <li><a href="about/about.htm"  title="about Roux Academy">About</a></li>
+  </ul>
+</nav>
+</header>
+<article id="mainContent">
+  <h1>We apologize!</h1>
+  <p>It seems like the page you're looking for either doesn't exist, or perhaps the name has changed. In order to help you find what you're looking for, feel free to use the search option below, or choose a destination from the list of links available below. Again, we apologize for the inconvenience, and if you still can't find what you're looking for, feel free to <a href="admissions/request.htm">contact us</a>.</p>
+  <form id="frmSearch" action="http://learn.rouxacademy.com" method="post" class="search-form">
+    <label for="search">Looking for something?</label>
+    <input type="search" placeholder="Search" title="Search" class="q" name="search" id="search">
+    <input type="submit" class="submit" value="Go" name="submit">
+  </form>
+  <h2>Frequent Destinations</h2>
+  <ul class="links">
+    <li><a href="/index.hm">Home page</a></li>
+    <li><a href="programs/programs.htm">Academic Programs</a></li>
+    <li><a href="admissions/aid.htm">Financial Aid</a></li>
+    <li><a href="admissions/apply.htm">Application Process</a></li>
+    <li><a href="admissions/housing.htm">Student Housing</a></li>
+    <li><a href="campus/index.htm">Campus Portal</a></li>
+    <li><a href="students/index.htm">Student Portal</a></li>
+    <li><a href="campus/tour.htm">Campus Tour</a></li>
+    <li><a href="programs/internships.htm">Internship Programs</a></li>
+    <li><a href="programs/catalog.htm">Course Catalog</a></li>
+    <li><a href="http://www.rouxmuseum.com">Marbielle Roux Museum</a></li>
+    <li><a href="admissions/request.htm">Transcript Request</a></li>
+    <li><a href="admissions/review.htm">Portfolio Review</a></li>
+  </ul>
+  <h2>About Roux Academy</h2>
+  <p>We&rsquo;ve been providing fine art and design education for over 150 years. But age hasn&rsquo;t slowed us down. Roux strives to build on our prestigious history, developing courses and nurturing graduates that will shape the next 150 years. When you join Roux, you join a unique community at one of our four campuses, which reflect the subject areas studied there. You&rsquo;ll be surrounded by artists, designers, filmmakers, and writers with similar passions and interests. And the supportive environment at Roux encourages collaboration and creates enthusiasm among our students. Our teachers help you develop and push your creative boundaries, while giving you the space and time to explore your subject area and to find your own style. Join Roux Academy and join a community that&rsquo;s dedicated to helping you reach your highest artistic and creative potential.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</article>
+<aside>
+<section class="academic info">
+<h2>Academic Links</h2>
+<ul>
+  <li><a href="programs/undergraduate.htm" title="undergraduate degrees">Undergraduate Degrees</a></li>
+  <li><a href="programs/graduate.htm" title="Graduate Degrees">Graduate Degree Programs</a></li>
+  <li><a href="programs/continuing-education.htm" title="Continuing education">Continuing Education</a></li>
+  <li><a href="programs/faculty.htm" title="Faculty">Faculty Profiles</a></li>
+   <li><a href="programs/application-requirement.htm" title="Application requirements">Application Requirements</a></li>
+  <li><a href="programs/study-abroad.htm" title="Study abroad programs">Study Abroad Programs</a></li>
+  <li><a href="programs/internships.htm" title="Internship programs">Internship Programs</a></li>
+  <li><a href="programs/calendar.htm" title="Academic calendar">Academic Calendar</a></li>
+</ul>
+</section>
+<section class="connect info">
+<h2>Connect with us</h2>
+<ul>
+  <li><a href="http://www.twitter.com/rouxacademy" title="Follow us!" target="_blank" class="twitter">Twitter</a></li>
+  <li><a href="https://plus.google.com/" title="Google Plus" target="_blank" class="google">Google Plus</a></li>
+  <li><a href="http://facebook.com" title="Be our friend" target="_blank" class="facebook">Facebook</a></li>
+  <li><a href="http://www.linkedin.com" title="Let's connect" target="_blank" class="linked">LinkedIn</a></li>
+</ul>
+</section>
+<section class="find info">
+<h2>Find out more</h2>
+<ul>
+<li><a href="tour.htm" title="Take a campus tour">Take a campus tour</a></li>
+<li><a href="catalog.htm" title="course catalog">Download a course catalog</a></li>
+<li><a href="admissions.htm" title="Apply now">Apply now</a></li>
+</ul>
+</section>
+<section class="show info">
+<h2>Current Show</h2>
+<img src="_images/show1.jpg" width="285" height="230" alt="Current show">
+<p>Join us on May 11th for the opening reception of Ceramic Currency, an annual show presented by graduates from the Craft and Design program. Come see an exhibition of contemporary pottery and ceramic sculpture by over 30 artists. <a href="programs/current_show.htm" title="current show" class="more">more info</a></p>
+</section>
+</aside>
+<footer id="pageFooter" class="cf">
+<nav class="footerNav">
+<section class="col">
+<h3>About Roux Academy</h3>
+  <div class="col1">
+  <ul>
+  <li><a href="mission.htm" title="Our mission">Mission Statement</a></li>
+  <li><a href="history.htm" title="school history">School History</a></li>
+  <li><a href="accreditation.htm" title="accreditation and affliates">Accreditation &amp; Affiliates</a></li>
+  <li><a href="board.htm" title="board members">Board Members</a></li>
+  </ul>
+  </div>
+  <div class="col2">
+  <ul>
+  <li><a href="faculty.htm" title="faculty and staff">Faculty &amp; Staff</a></li>
+  <li><a href="visiting_professors.htm" title="visiting professors">Visiting Professors</a></li>
+  <li><a href="museum.htm" title="Maribielle Roux Museum">Marbielle Roux Museum</a></li>
+  <li><a href="directions.htm" title="directions">Map &amp; Directions</a></li>
+  </ul>
+  </div>
+</section>
+<section class="col">
+<h3>Admissions &amp; Programs</h3>
+  <div class="col1">
+  <ul>
+  <li><a href="degrees.htm" title="Degree programs">Degree Programs</a></li>
+  <li><a href="catalog.htm" title="course catalog">Course Catalog</a></li>
+  <li><a href="fine_art.htm" title="fine art programs">Fine Art Programs</a></li>
+  <li><a href="design.htm" title="design concentration">Design Concentration</a></li>
+  </ul>
+  </div>
+  <div class="col2">
+  <ul>
+  <li><a href="fashion.htm" title="fashion program">Fashion Program</a></li>
+  <li><a href="product_design.htm" title="product design">Product Design</a></li>
+  <li><a href="continuing_ed.htm" title="Continuing Education">Continuing Education</a></li>
+  <li><a href="financial_aid.htm" title="tuition and financial aid">Tuition &amp; Financial Aid</a></li>
+  </ul>
+  </div>
+</section>
+<section class="col">
+<h3>Student Resources</h3>
+  <div class="col1">
+  <ul>
+  <li><a href="campus.htm" title="Campus information">Campus Information</a></li>
+  <li><a href="housing.htm" title="student housing">Student Housing</a></li>
+  <li><a href="contact.htm" title="transcript request">Transcript Request</a></li>
+  <li><a href="applying.htm" title="application process">Application Process</a></li>
+  </ul>
+  </div>
+  <div class="col2">
+  <ul>
+  <li><a href="portfolio_review.htm" title="portfolio review">Portfolio Review</a></li>
+  <li><a href="conselling.htm" title="career counselling">Career Counselling</a></li>
+  <li><a href="internships.htm" title="internship programs">Internship Programs</a></li>
+  <li><a href="student_portal.htm" title="student portal login">Student Portal Login</a></li>
+   </ul>
+  </div>
+</section>
+</nav>
+<p>&copy;Copyright  Roux Academy of Art &amp; Design.  All rights reserved.<a href="privacy.htm" title="privacy statement"> Privacy Statement</a> |<a href="legal.htm" title="legal terms"> Legal Terms and Conditions</a> |<a href="disclosures.htm" title="student outcomes and disclosures"> Student Outcomes/Disclosures</a></p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,56 @@
+﻿@addTagHelper "*, Microsoft.AspNetCore.Mvc.TagHelpers"
+@model SecurityInAspNet.WebClient.Models.Student.CourseGrade
+
+@{
+    ViewData["Title"] = "Add Grade";
+    Layout = "_ContentLayout";
+}
+
+<fieldset>
+
+    <h1>Add Grade</h1>
+    <br />
+
+    <form asp-controller="Student" role="form" asp-action="AddGrade" class="form-horizontal">
+        <div asp-validation-summary="All" class="input-validation-error"></div>
+
+        <div class="form-group">
+            <label asp-for="CourseName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input type="text" asp-for="CourseName" class="form-control" />
+                <span asp-validation-for="CourseName" class="field-validation-error"></span>
+             </div>
+            </div>
+        <br />
+        <div class="form-group">
+            <label asp-for="ProfessorName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input type="text" asp-for="ProfessorName" class="form-control" />
+                <span asp-validation-for="ProfessorName" class="field-validation-error"></span>
+            </div>
+            </div>
+        <br />
+        <div class="form-group">
+            <label asp-for="Grade" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input type="text" asp-for="Grade" class="form-control" />
+                <span asp-validation-for="Grade" class="field-validation-error"></span>
+            </div>
+        </div>
+        <br />
+        <div class="form-group">
+            <label asp-for="StudentUsername" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input type="text" asp-for="StudentUsername" class="form-control" />
+                <span asp-validation-for="StudentUsername" class="field-validation-error"></span>
+            </div>
+        </div>
+
+        <br />
+        <div>
+            <label>&nbsp;</label>
+            <button type="submit" class="btn btn-primary">Save</button>
+        </div>
+        <br />
+    </form>
+</fieldset>
