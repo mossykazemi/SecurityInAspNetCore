@@ -1,5 +1,7 @@
 ﻿@addTagHelper "*, Microsoft.AspNetCore.Mvc.TagHelpers"
 @model IEnumerable<SecurityInAspNet.Models.Student.CourseGrade>
+@using System.Text.Encodings.Web
+
 
 @{
     ViewData["Title"] = "Student Home";
@@ -10,7 +12,8 @@
     <a asp-action="AddGrade">Add Grade</a>
     @foreach (var grade in Model)
     {
-        <h3>@grade.CourseName</h3>
+        @*<h3>@Html.Raw(grade.CourseName)</h3>*@
+        <h3>@HtmlEncoder.Default.Encode(grade.CourseName)</h3>
         <p>
             Professor: <strong>@grade.ProfessorName</strong><br>
             Grade: @grade.Grade%
