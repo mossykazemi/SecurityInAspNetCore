@@ -6,16 +6,17 @@
     Layout = "_ContentLayout";
 }
 <fieldset>
-<h2>Welcome @User.Claims.FirstOrDefault(x=> x.Type=="name").Value !</h2><br />
-<p><strong><a class="contentlink" href="@Url.Action("AddGrade")">Add Grade</a></strong></p>
+    <h2>Welcome @User.Claims.FirstOrDefault(c => c.Type == "name").Value!</h2><br />
+    <p><strong><a class="contentlink" href="@Url.Action("AddGrade")">Add Grade</a></strong></p>
 
-<dl>
-    @foreach (var claim in User.Claims)
+    @foreach (var grade in Model)
     {
+        <h3>@grade.CourseName</h3>
+        <p>
+            Professor:<strong>@grade.ProfessorName</strong>
+            Grade:@grade.Grade%
+        </p>
 
-        <dt>@claim.Type</dt>
-                       <dd>@claim.Value</dd>
 
     }
-    </dl>
 </fieldset>

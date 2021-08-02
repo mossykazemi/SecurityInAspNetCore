@@ -34,19 +34,17 @@ namespace SecurityInAspNet.TokenService
             {
                 app.UseDeveloperExceptionPage();
             }
+            app.UseIdentityServer();
 
             app.UseStaticFiles();
-
-            app.UseIdentityServer();
 
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGet("/", async context =>
-                {
-                    await context.Response.WriteAsync("Hello World!");
-                });
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }
