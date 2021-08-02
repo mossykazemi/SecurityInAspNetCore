@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using IdentityServer4;
 using IdentityServer4.Test;
 using IdentityServerHost.Quickstart.UI;
 
@@ -25,6 +26,13 @@ namespace SecurityInAspNet.TokenService
                 .AddInMemoryIdentityResources(Config.GetIdentityResources())
                 .AddInMemoryClients(Config.GetClients())
                 .AddTestUsers(TestUsers.Users);
+
+            services.AddAuthentication().AddGoogle(options =>
+            {
+                options.SignInScheme = IdentityServerConstants.ExternalCookieAuthenticationScheme;
+                options.ClientId = "";
+                options.ClientSecret = "";
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
