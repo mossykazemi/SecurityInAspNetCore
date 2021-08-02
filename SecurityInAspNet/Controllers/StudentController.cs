@@ -12,6 +12,7 @@ using SecurityInAspNet.DataServices;
 namespace SecurityInAspNet.Controllers
 {
     [Authorize]
+    [AutoValidateAntiforgeryToken]
     public class StudentController : Controller
     {
         private readonly StudentDataContext _db;
@@ -31,14 +32,15 @@ namespace SecurityInAspNet.Controllers
         }
 
         [HttpGet]
-        [Authorize(Policy = "FacultyOnly")]
+        //[Authorize(Policy = "FacultyOnly")]
         public IActionResult AddGrade()
         {
             return View();
         }
 
         [HttpPost]
-        [Authorize(Policy = "FacultyOnly")]
+        //[Authorize(Policy = "FacultyOnly")]
+        [ValidateAntiForgeryToken]
         public IActionResult AddGrade(CourseGrade model)
         {
             if (!ModelState.IsValid)
