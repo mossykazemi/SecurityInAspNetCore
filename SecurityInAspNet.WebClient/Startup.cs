@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using SecurityInAspNet.WebClient.DataServices;
 
@@ -44,6 +45,8 @@ namespace SecurityInAspNet.WebClient
                 {
                     options.ExpireTimeSpan = TimeSpan.FromMinutes(60);
                     options.Cookie.Name = "Cookie";
+                    options.Cookie.HttpOnly = true;
+                    options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
                 })
                 .AddOpenIdConnect("oidc", options =>
                  {
