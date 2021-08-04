@@ -47,6 +47,8 @@ namespace SecurityInAspNet
                     policy=>policy.RequireClaim("FacultyNumber")
                     );
             });
+
+            var pass = Configuration["PaymentPassword"];
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
