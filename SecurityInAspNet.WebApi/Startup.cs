@@ -43,7 +43,7 @@ namespace SecurityInAspNet.WebApi
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseCors("RouxAcademy");
+            //app.UseCors("RouxAcademy");
             app.UseRouting();
 
             //app.UseAuthorization();
