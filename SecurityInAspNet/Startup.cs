@@ -9,6 +9,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SecurityInAspNet.DataServices;
 
@@ -44,8 +45,13 @@ namespace SecurityInAspNet
             services.AddAuthorization(options =>
             {
                 options.AddPolicy("FacultyOnly",
-                    policy=>policy.RequireClaim("FacultyNumber")
+                    policy => policy.RequireClaim("FacultyNumber")
                     );
+            });
+
+            services.Configure<MvcOptions>(options =>
+            {
+                options.Filters.Add(new RequireHttpsAttribute());
             });
 
             var pass = Configuration["PaymentPassword"];
