@@ -9,6 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.DataProtection;
 
 namespace SecurityInAspNet.WebApi
 {
@@ -32,6 +33,11 @@ namespace SecurityInAspNet.WebApi
                          .AllowAnyHeader()
                     );
             });
+
+            services.AddDataProtection()
+                .DisableAutomaticKeyGeneration()
+                .SetDefaultKeyLifetime(new TimeSpan(14, 0, 0, 0));
+
             services.AddControllers();
         }
 
@@ -42,10 +48,10 @@ namespace SecurityInAspNet.WebApi
             {
                 app.UseDeveloperExceptionPage();
             }
-
-            //app.UseCors("RouxAcademy");
+           
             app.UseRouting();
 
+            app.UseCors("RouxAcademy");
             //app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
