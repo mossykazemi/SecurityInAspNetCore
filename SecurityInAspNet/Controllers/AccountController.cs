@@ -11,6 +11,8 @@ using SecurityInAspNet.Models;
 
 namespace SecurityInAspNet.Controllers
 {
+    [AutoValidateAntiforgeryToken]
+    [RequireHttps]
     public class AccountController : Controller
     {
 
@@ -30,6 +32,7 @@ namespace SecurityInAspNet.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Register(RegisterViewModel model)
         {
 
@@ -70,6 +73,7 @@ namespace SecurityInAspNet.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(LoginViewModel model, string returnUrl = null)
         {
             ViewData["ReturnUrl"] = returnUrl;
