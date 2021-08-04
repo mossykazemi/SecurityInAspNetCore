@@ -24,7 +24,14 @@ namespace SecurityInAspNet.WebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.AddCors(options =>
+            {
+                options.AddPolicy("RouxAcademy", builder =>
+                     builder.WithOrigins("http://localhost:1860")
+                         .WithMethods("GET")
+                         .AllowAnyHeader()
+                    );
+            });
             services.AddControllers();
         }
 
@@ -36,9 +43,10 @@ namespace SecurityInAspNet.WebApi
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseCors("RouxAcademy");
             app.UseRouting();
 
-            app.UseAuthorization();
+            //app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

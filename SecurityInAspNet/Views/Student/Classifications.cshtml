@@ -10,12 +10,36 @@
 
     <h1>Student Classifications</h1>
     <br />
-@foreach (var classification in Model)
-{
-    <p>
-        @classification<br>
-    </p>
+    @foreach (var classification in Model)
+    {
+        <p>
+            @classification<br>
+        </p>
 
-}
+    }
+
+    <br />
+    <h1>Course Names</h1>
+    <div id="CourseNames">
+
+    </div>
 
 </fieldset>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+    $(function () {
+        $.ajax({
+            url: 'http://localhost:51777/api/courses',
+            type: "Get",
+            contentType: "Application/json; charset=utf-8"
+        }).done(function (res) {
+            $("#CourseNames").empty();
+            $.each(res,
+                function (index, value) {
+                    $("#CourseNames").append('<p>' + value + "</p>");
+                });
+        });
+    });
+</script>
+
