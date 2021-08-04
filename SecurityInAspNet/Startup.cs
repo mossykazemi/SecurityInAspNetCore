@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Rewrite;
 using Microsoft.EntityFrameworkCore;
 using SecurityInAspNet.DataServices;
 
@@ -68,6 +69,10 @@ namespace SecurityInAspNet
             {
                 app.UseExceptionHandler("/Home/Error");
             }
+
+            var reWriterOptions = new RewriteOptions().AddRedirectToHttps();
+            app.UseRewriter(reWriterOptions);
+
             app.UseStaticFiles();
 
             app.UseAuthentication();
